@@ -1,6 +1,6 @@
 
 const movie = require('./moviefinder.js')
-// const spotify = require('./spotify.js')
+const spotify = require('./spotify.js')
 
 
 
@@ -9,7 +9,7 @@ switch (process.argv[2]) {
        movie.movieSearch()
         break; 
     case 'spotify-this-song': 
-        // spotify.Spotify()
+        spotify.musicSearch()
         break;
     case 'concert-this':
         break;
