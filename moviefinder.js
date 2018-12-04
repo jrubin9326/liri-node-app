@@ -10,10 +10,7 @@ module.exports = {
         function(response) {
         console.log(`Here is some information about ${movieName}. It was released on ${response.data.Released} \nThe plot of the movie is ${response.data.Plot}
         \n The rating of the movie is ${response.data.Rated} \n The language of the movie is in ${response.data.Language} \n The actors in the movie are ${response.data.Actors} \n The Rotten Tomatoes Rating is ${response.data.Ratings[1].Value} and the IMBD rating is ${response.data.Ratings[0].Value}\nLastly this movie was produced in ${response.data.Country}`)
-
-        
-      }
-    );
+        });
     }
 }
 
