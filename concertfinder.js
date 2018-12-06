@@ -6,7 +6,7 @@ module.exports = {
         const artist = process.argv.slice(3).join(" ");
         const bandsURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
         axios.get(bandsURL).then(function (response) {
-            if (response === []) {
+            if (response.data.length === 0) {
                 console.log(`Sorry, it looks like ${artist} has no upcoming tourdates`)
 
             } else {
