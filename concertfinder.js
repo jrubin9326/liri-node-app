@@ -1,21 +1,28 @@
 const axios = require("axios"); 
-const moment = require("moment")
-const artist = process.argv.slice(2).join(" ");
-console.log(artist)
-const bandsURL = "https://rest.bandsintown.com/artists/"+artist+"/events?app_id=codingbootcamp"
-function concertSearch() {    
-    axios.get(bandsURL).then(
-        function (response) {
-            // for (let i  = 0; i < response.venue.length; i++)
-            console.log(response.data[0].venue.name, response.data[0].venue.city, response.data[0].venue.region, response.data[0].datetime)
-        }
-    ).catch ((err) => {
-        if (err) {
+const moment = require("moment");
+// module.exports = {
+    // concertSearch : function() {    
+    // module.exports = {
+module.exports = {
+    concertSearch :function() { 
+    const artist = process.argv.slice(3).join(" ");
+    const bandsURL = "https://rest.bandsintown.com/artists/"+artist+"/events?app_id=codingbootcamp"
+        axios.get(bandsURL).then(
+            function (response) {
+                // if (response === []) {
+                //     console.log(`Sorry, it looks like ${artist} has no upcoming tourdates`) {
+                
+                //      } else {
+                    for (var i =0; i < response.data.length; i++) {
+                    console.log(`${artist} will play at ${response.data[i].venue.name} in ${response.data[i].venue.region}, on ${moment(response.data[i].datetime).format('MM-DD-YYYY')}`)
+                }
+            
+            }).catch ((err) => {
+            if (err) {
             console.log(`Error: ${err}`)
-        }; 
-    })
+            }; 
+        })
     }
-concertSearch(); 
 
-
+}
 
