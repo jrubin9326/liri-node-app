@@ -1,6 +1,5 @@
-const spotifyKey = require('./keys')
+const spotifyKey = require('./keys.js')
 var Spotify = require('node-spotify-api');
-
 var spotify = new Spotify({
     id: spotifyKey.id,
     secret: spotifyKey.secret
@@ -19,4 +18,5 @@ module.exports = {
             })
     }
 }
+
 
