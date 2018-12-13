@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Spotify = require('node-spotify-api');
 const spotifyKey = require('./keys.js')
-var spotify = new Spotify({
+const spotify = new Spotify({
     id: spotifyKey.id,
     secret: spotifyKey.secret
 });
